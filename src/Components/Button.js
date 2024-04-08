@@ -12,8 +12,12 @@ const getStyleName = btn => {
 }
 
 const Button = ({ value}) => {
+    const handleBtnClick = () => {
+        console.log(value);
+    }
+
   return (
-    <button className={`${getStyleName(value)} button`}>{value}</button>
+    <button onClick={handleBtnClick} className={`${getStyleName(value)} button`}>{value}</button>
   )
 }
 
