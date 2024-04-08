@@ -69,7 +69,23 @@ const Button = ({ value}) => {
                 num: 0
             })
         }
-        
+
+    }
+// Persen Click function
+    const percenClick = () => {
+        setCalc({
+            num: (calc.num / 100),
+            res: (calc.res / 100),
+            sign: ''
+        })
+    }
+// Invert Click function
+    const invertClick = () => {
+        setCalc({
+            num: calc.num ? calc.num * -1 : 0,
+            res: calc.res ? calc.num * -1 : 0,
+            sign: ''
+        })
     }
 
     const handleBtnClick = () => {
@@ -81,7 +97,9 @@ const Button = ({ value}) => {
             'x': signClick,
             '-': signClick,
             '+': signClick,
-            '=': equalsClick
+            '=': equalsClick,
+            '%': percenClick,
+            '-+': invertClick
         }
         if(results[value]) {
             return results[value]()
